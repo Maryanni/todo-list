@@ -50,6 +50,7 @@
 .classDivPrincipal{
   width: 70%;
   background: whitesmoke;
+  padding: 25px;
 }
 .classCard{
   width: 55%;
@@ -60,4 +61,8 @@
 .trushIcon{
   justify-content: space-between;
   display: flex;
+}
+
+li:hover span{
+	width: 60px;
 }

@@ -3,9 +3,9 @@ import "./App.css";
 import { useState } from "react";
 
 function App() {
-  const [inputValue, setInputValue] = useState({
-    name: "",
-  });
+  const [inputValue, setInputValue] = useState(
+    '',
+  );
 
   const [list, setList] = useState([
     "I need to run",
@@ -22,13 +22,14 @@ function App() {
 
   const handleOnSubmit = (event) => {
     event.preventDefault();
-    console.log("ya casi termino");
     setList([...list,
       inputValue.needToBeDone]); 
-    setInputValue({
-      name: "",
-    })
+    setInputValue({needToBeDone: ""})
   };
+
+  const deleteList = (indexToDelete) => {
+    setList(list.filter((item, index) => index !== indexToDelete))
+  }
 
   return (
     <div className="Container classContainer">
@@ -40,6 +41,7 @@ function App() {
               <input
                 onChange={handlerOnChange}
                 name="needToBeDone"
+                value={inputValue.needToBeDone}
                 className="placeholderInput"
                 type="text"
                 placeholder="What needs to be done?"
@@ -51,12 +53,12 @@ function App() {
           {list.map((item, index) => {
             return <li className="list-group-item trushIcon" key={index}>
             {item}
-            <span>
+            <span onClick={() => deleteList(index)}>
               <i className="fa fa-regular fa-rectangle-xmark"></i>
             </span>
           </li>;
           })}
-          <li className="list-group-item">Aqui va la cantidad de items</li>
+          <li className="list-group-item bg-secondary-subtle">  <b> {list.length} </b> items left</li>
         </ul>
       </div>
     </div>
