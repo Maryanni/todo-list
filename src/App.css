@@ -36,3 +36,28 @@
     transform: rotate(360deg);
   }
 }
+
+.placeholderInput{
+  border: 0;
+  width: 100%;
+}
+
+.classContainer{
+  width: 100%;
+  background: #282c34;
+
+}
+.classDivPrincipal{
+  width: 70%;
+  background: whitesmoke;
+}
+.classCard{
+  width: 55%;
+  margin-top: 1cm;
+  margin-bottom: 1cm;
+}
+
+.trushIcon{
+  justify-content: space-between;
+  display: flex;
+}
