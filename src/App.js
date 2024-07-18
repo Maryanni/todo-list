@@ -3,9 +3,8 @@ import "./App.css";
 import { useState } from "react";
 
 function App() {
-  const [inputValue, setInputValue] = useState(
-    '',
-  );
+  const [inputValue, setInputValue] = useState({
+    needToBeDone: ''});
 
   const [list, setList] = useState([
     "I need to run",
@@ -31,6 +30,7 @@ function App() {
     setList(list.filter((item, index) => index !== indexToDelete))
   }
 
+  console.log(inputValue.needToBeDone);
   return (
     <div className="Container classContainer">
       <div className="classDivPrincipal">
